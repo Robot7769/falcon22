@@ -58,7 +58,8 @@ void setup() {
 
     rbc().leds().blue( true );  // zapne modrou LED - tim zapne i Odrive 
 
-    odriveSerial.begin(115200, SERIAL_8N1, 15, 13);
+                                        // RX, TX   na Odrive je oranžový kabel GPIO1-TX a červený GPIO2-RX
+    odriveSerial.begin(115200, SERIAL_8N1, 15, 13); // todo kontrola, jestli to jede 
 
     Serial.println( "Setup odrive begin" );
     configureOdrive(odrive);
